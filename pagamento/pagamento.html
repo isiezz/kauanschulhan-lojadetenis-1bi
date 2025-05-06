@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Loja de Tênis</title>
+  <link rel="stylesheet" href="./pagamento.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pagamento</h1>
+    <div id="payment-items" class="payment-items"></div>
+
+    <h2>Forma de Pagamento</h2>
+    <form id="payment-form">
+      <label><input type="radio" name="payment-method" value="credito" required> Cartão de Crédito</label><br>
+      <label><input type="radio" name="payment-method" value="debito"> Cartão de Débito</label><br>
+      <label><input type="radio" name="payment-method" value="pix"> PIX</label><br>
+      <label><input type="radio" name="payment-method" value="dinheiro"> Dinheiro</label>
+      <div id="troco-field" style="display:none">
+        <label>Troco para: <input type="number" id="troco" min="0"></label>
+      </div>
+
+      <button type="submit">Finalizar</button>
+    </form>
+
+    <div id="mensagem-final" class="mensagem-final"></div>
+  </div>
+
+  <script src="pagamento.js"></script>
+
+
+  <div class="barra-acesso">
+    <a href="../carrinho/carrinho.html" title="Carrinho">🛒</a>
+    <a href="../pagamento/pagamento.html" title="Pagamento">💳</a>
+  </div>
+  
+</body>
+
+</html>
