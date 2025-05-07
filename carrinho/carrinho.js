@@ -13,34 +13,21 @@ function adicionarAoCarrinho(produto) {
   card.className = 'card';
   card.id = `produto-${produto.id}`;
 
-  const tamanhos = ['36', '37', '38', '39', '40', '41', '42'];
-  const cores = ['Preto', 'Branco', 'Azul', 'Vermelho'];
-
-  const tamanhoSelect = tamanhos.map(t => `<option value="${t}">${t}</option>`).join('');
-  const corSelect = cores.map(c => `<option value="${c}">${c}</option>`).join('');
-
   card.innerHTML = `
     <img src="${produto.img}" alt="${produto.nome}" />
     <h3>${produto.nome}</h3>
-    <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
-    <div class="select-container">
-      <label>Tamanho:
-        <select name="tamanho">
-          ${tamanhoSelect}
-        </select>
-      </label>
-      <label>Cor:
-        <select name="cor">
-          ${corSelect}
-        </select>
-      </label>
-    </div>
+    <p><strong>Tamanho:</strong> ${produto.tamanho}</p>
+    <p><strong>Cor:</strong> ${produto.cor}</p>
+    <p><strong>Quantidade:</strong> ${produto.quantidade}</p>
     <p>${produto.descricao || 'Sem descrição disponível.'}</p>
-    <button onclick="removerItem(${produto.id})">Remover</button>
+    <button class="remover-btn" onclick="removerItem(${produto.id})">Remover</button>
   `;
 
   carrinhoContainer.appendChild(card);
 }
+
+
+
 
 function removerItem(id) {
   produtos = produtos.filter(p => p.id !== id);
